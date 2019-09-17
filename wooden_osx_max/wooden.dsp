@@ -4,8 +4,6 @@ declare author "ER";
 import("stdfaust.lib");
 instrument = library("instruments.lib"); 
 
-//d'apres les enveloppes de John Chowning utilisees dans Turenas
-
 /* =============== DESCRIPTION ================= :
 
 - Wooden keyboard
@@ -15,8 +13,6 @@ instrument = library("instruments.lib");
 - Front + Rotation = short notes
 
 */
-
-//--------------------------------- INSTRUMENT ---------------------------------
 
 marimkey(n) = os.osc(octave(n)) * (0.1)
 			  *(trigger(n+1) : enveloppe : fi.lowpass(1,500));
